@@ -49,6 +49,7 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.bntedit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NLivro
@@ -68,7 +69,6 @@
             this.txbNomeLivro.Name = "txbNomeLivro";
             this.txbNomeLivro.Size = new System.Drawing.Size(163, 33);
             this.txbNomeLivro.TabIndex = 0;
-            this.txbNomeLivro.Text = "v";
             this.txbNomeLivro.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // TxbAutor
@@ -112,7 +112,7 @@
             this.btncow.Font = new System.Drawing.Font("Dutch801 XBd BT", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncow.ForeColor = System.Drawing.Color.Black;
             this.btncow.Image = global::Emanuela3B.Properties.Resources.livro_png;
-            this.btncow.Location = new System.Drawing.Point(69, 224);
+            this.btncow.Location = new System.Drawing.Point(74, 320);
             this.btncow.Name = "btncow";
             this.btncow.Size = new System.Drawing.Size(458, 367);
             this.btncow.TabIndex = 6;
@@ -184,13 +184,14 @@
             this.columnHeader6,
             this.columnHeader7});
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(69, 630);
+            this.listView2.Location = new System.Drawing.Point(630, 25);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(458, 202);
+            this.listView2.Size = new System.Drawing.Size(430, 185);
             this.listView2.TabIndex = 13;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
             this.listView2.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged);
+            this.listView2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView2_MouseDoubleClick);
             // 
             // columnHeader1
             // 
@@ -221,12 +222,26 @@
             // 
             this.columnHeader7.Text = "Telefone";
             // 
+            // bntedit
+            // 
+            this.bntedit.BackColor = System.Drawing.Color.MistyRose;
+            this.bntedit.Font = new System.Drawing.Font("Dutch801 XBd BT", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntedit.ForeColor = System.Drawing.Color.Black;
+            this.bntedit.Image = global::Emanuela3B.Properties.Resources.livro_png;
+            this.bntedit.Location = new System.Drawing.Point(618, 320);
+            this.bntedit.Name = "bntedit";
+            this.bntedit.Size = new System.Drawing.Size(458, 367);
+            this.bntedit.TabIndex = 14;
+            this.bntedit.UseVisualStyleBackColor = false;
+            this.bntedit.Click += new System.EventHandler(this.bntedit_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(601, 866);
+            this.ClientSize = new System.Drawing.Size(1214, 866);
+            this.Controls.Add(this.bntedit);
             this.Controls.Add(this.listView2);
             this.Controls.Add(this.txbtelefone);
             this.Controls.Add(this.txbCPF);
@@ -272,6 +287,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.Button bntedit;
     }
 }
 

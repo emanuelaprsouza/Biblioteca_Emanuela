@@ -15,6 +15,8 @@ namespace Emanuela3B
 {
     public partial class Form1 : Form
     {
+
+        private int id;
         public Form1()
         {
             InitializeComponent();
@@ -40,7 +42,7 @@ namespace Emanuela3B
                     int id = (int)dr["Id"];
                     string Livro = (string)dr["NomedoLivro"];
                     string Autor = (string)dr["Autor"];
-                    string Tempo = (string)dr["Tempo"];
+                    string Tempo = (string)dr["Autor"];
                     string Nome = (string)dr["Nome"];
                     string CPF = (string)dr["CPF"];  
                     string Tel = (string)dr["Telefone"];
@@ -205,6 +207,57 @@ namespace Emanuela3B
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void bntedit_Click(object sender, EventArgs e)
+        {
+            Connection connection = new Connection();
+            SqlCommand sqlCommand = new SqlCommand();
+
+            sqlCommand.Connection = connection.ReturnConnection();
+            sqlCommand.CommandText = @"UPDATE emprestimo SET (
+             NomedoLivro = @Livro,
+             Autor = @Autor,
+             Tempo = @Tempo, 
+             Nome  = @Nome,
+             CPF = @CPF,
+             telefone = @telefone)";
+
+            sqlCommand.Parameters.AddWithValue("@Livro", txbNomeLivro.Text);
+            sqlCommand.Parameters.AddWithValue("@Autor", TxbAutor.Text);
+            sqlCommand.Parameters.AddWithValue("@Tempo", txbTempo.Text);
+            sqlCommand.Parameters.AddWithValue("@Nome", txbNpessoa.Text);
+            sqlCommand.Parameters.AddWithValue("@CPF", txbCPF.Text);
+            sqlCommand.Parameters.AddWithValue("@telefone", txbtelefone.Text);
+
+            sqlCommand.ExecuteNonQuery();
+
+            MessageBox.Show("Editado com sucesso",
+                "BIBLIOTECA",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+
+            txbNomeLivro.Clear();
+            txbNpessoa.Clear();
+            txbtelefone.Clear();
+            txbTempo.Clear();
+            TxbAutor.Clear();
+            txbCPF.Clear();
+
+            UpdateListView();
+        }
+
+        private void listView2_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int index; //guardar variavel do indice que foi clicado 
+            index = listView2.FocusedItem.Index;
+            Id = int.Parse(listView2.Items[index].SubItems[0].Text);
+            txbNomeLivro.Text = listView2.Items[index].SubItems[1].Text;
+            TxbAutor.Text = listView2.Items[index].SubItems[2].Text;
+            txbTempo.Text = listView2.Items[index].SubItems[3].Text;
+            txbNpessoa.Text = listView2.Items[index].SubItems[4].Text;
+            txbCPF.Text = listView2.Items[index].SubItems[5].Text;
+            txbtelefone.Text = listView2.Items[index].SubItems[6].Text;
         }
     }
 }
