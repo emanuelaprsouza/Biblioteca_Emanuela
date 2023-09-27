@@ -140,33 +140,12 @@ namespace Emanuela3B
                  TxbAutor.Clear();
                  txbCPF.Clear();
 
-            //String NLIVRO = txbNomeLivro.Text;
-            //String AUTOR = TxbAutor.Text;
-            //String TAluguel = txbTempo.Text;
-            //String Npessoa = txbNpessoa.Text;
-            //String cpfpessoa = txbCPF.Text;
-            //String telefonepess = txbtelefone.Text;
-
-            //String message = "Nome Livro: " + NLIVRO +
-            //                 "\nAUTOR: " + AUTOR +
-            //                 "\nTempo: " + TAluguel +
-            //                 "\nNome cadastro: " + Npessoa +
-            //                 "\nCPF: " + cpfpessoa +
-            //                 "\nTelefone pessoal: " + telefonepess;
-
-            //MessageBox.Show(
-            //    message,
-            //    "CADASTRO",
-            //    MessageBoxButtons.OKCancel,
-            //    MessageBoxIcon.Information           
-            //    );
-
             UpdateListView();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            UpdateListView();
         }
 
 
@@ -215,13 +194,14 @@ namespace Emanuela3B
             SqlCommand sqlCommand = new SqlCommand();
 
             sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = @"UPDATE emprestimo SET (
+            sqlCommand.CommandText = @"UPDATE emprestimo SET 
              NomedoLivro = @Livro,
-             Autor = @Autor,
-             Tempo = @Tempo, 
-             Nome  = @Nome,
-             CPF = @CPF,
-             telefone = @telefone)";
+             Autor    = @Autor,
+             Tempo    = @Tempo, 
+             Nome     = @Nome,
+             CPF      = @CPF,
+             telefone = @telefone
+             WHERE id = @id";
 
             sqlCommand.Parameters.AddWithValue("@Livro", txbNomeLivro.Text);
             sqlCommand.Parameters.AddWithValue("@Autor", TxbAutor.Text);
@@ -229,6 +209,7 @@ namespace Emanuela3B
             sqlCommand.Parameters.AddWithValue("@Nome", txbNpessoa.Text);
             sqlCommand.Parameters.AddWithValue("@CPF", txbCPF.Text);
             sqlCommand.Parameters.AddWithValue("@telefone", txbtelefone.Text);
+            sqlCommand.Parameters.AddWithValue("@id", id);
 
             sqlCommand.ExecuteNonQuery();
 
@@ -251,13 +232,46 @@ namespace Emanuela3B
         {
             int index; //guardar variavel do indice que foi clicado 
             index = listView2.FocusedItem.Index;
-            Id = int.Parse(listView2.Items[index].SubItems[0].Text);
+            id = int.Parse(listView2.Items[index].SubItems[0].Text);
             txbNomeLivro.Text = listView2.Items[index].SubItems[1].Text;
             TxbAutor.Text = listView2.Items[index].SubItems[2].Text;
             txbTempo.Text = listView2.Items[index].SubItems[3].Text;
             txbNpessoa.Text = listView2.Items[index].SubItems[4].Text;
             txbCPF.Text = listView2.Items[index].SubItems[5].Text;
             txbtelefone.Text = listView2.Items[index].SubItems[6].Text;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Connection connection = new Connection();
+            SqlCommand sqlCommand = new SqlCommand();
+
+            sqlCommand.Connection = connection.ReturnConnection();
+            sqlCommand.CommandText = @"DELETE FROM emprestimo WHERE Id = @id";
+            sqlCommand.Parameters.AddWithValue("@id", id);
+            try
+            {
+                sqlCommand.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+                throw new Exception("Erro: Problemas ao excluir usuário no banco.\n" + err.Message);
+            }
+            finally
+            {
+                connection.CloseConnection();
+
+                txbNomeLivro.Clear();
+                txbNpessoa.Clear();
+                txbtelefone.Clear();
+                txbTempo.Clear();
+                TxbAutor.Clear();
+                txbCPF.Clear();
+
+                UpdateListView();
+
+            }
+
         }
     }
 }

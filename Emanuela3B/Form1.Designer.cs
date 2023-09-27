@@ -50,6 +50,7 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bntedit = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NLivro
@@ -108,13 +109,13 @@
             // 
             // btncow
             // 
-            this.btncow.BackColor = System.Drawing.Color.MistyRose;
+            this.btncow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btncow.Font = new System.Drawing.Font("Dutch801 XBd BT", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncow.ForeColor = System.Drawing.Color.Black;
             this.btncow.Image = global::Emanuela3B.Properties.Resources.livro_png;
-            this.btncow.Location = new System.Drawing.Point(74, 320);
+            this.btncow.Location = new System.Drawing.Point(32, 240);
             this.btncow.Name = "btncow";
-            this.btncow.Size = new System.Drawing.Size(458, 367);
+            this.btncow.Size = new System.Drawing.Size(481, 343);
             this.btncow.TabIndex = 6;
             this.btncow.UseVisualStyleBackColor = false;
             this.btncow.Click += new System.EventHandler(this.button1_Click);
@@ -183,10 +184,11 @@
             this.columnHeader5,
             this.columnHeader6,
             this.columnHeader7});
+            this.listView2.FullRowSelect = true;
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(630, 25);
+            this.listView2.Location = new System.Drawing.Point(611, 25);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(430, 185);
+            this.listView2.Size = new System.Drawing.Size(503, 185);
             this.listView2.TabIndex = 13;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
@@ -224,16 +226,29 @@
             // 
             // bntedit
             // 
-            this.bntedit.BackColor = System.Drawing.Color.MistyRose;
+            this.bntedit.BackColor = System.Drawing.Color.Salmon;
             this.bntedit.Font = new System.Drawing.Font("Dutch801 XBd BT", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bntedit.ForeColor = System.Drawing.Color.Black;
             this.bntedit.Image = global::Emanuela3B.Properties.Resources.livro_png;
-            this.bntedit.Location = new System.Drawing.Point(618, 320);
+            this.bntedit.Location = new System.Drawing.Point(411, 621);
             this.bntedit.Name = "bntedit";
-            this.bntedit.Size = new System.Drawing.Size(458, 367);
+            this.bntedit.Size = new System.Drawing.Size(296, 209);
             this.bntedit.TabIndex = 14;
             this.bntedit.UseVisualStyleBackColor = false;
             this.bntedit.Click += new System.EventHandler(this.bntedit_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.button1.Font = new System.Drawing.Font("Dutch801 XBd BT", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Image = global::Emanuela3B.Properties.Resources.livro_png;
+            this.button1.Location = new System.Drawing.Point(641, 246);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(473, 337);
+            this.button1.TabIndex = 15;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Form1
             // 
@@ -241,6 +256,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1214, 866);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.bntedit);
             this.Controls.Add(this.listView2);
             this.Controls.Add(this.txbtelefone);
@@ -257,7 +273,6 @@
             this.Controls.Add(this.NLivro);
             this.Controls.Add(this.btncow);
             this.Name = "Form1";
-            this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -288,6 +303,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.Button bntedit;
+        private System.Windows.Forms.Button button1;
     }
 }
 
