@@ -42,7 +42,7 @@ namespace Emanuela3B
                     int id = (int)dr["Id"];
                     string Livro = (string)dr["NomedoLivro"];
                     string Autor = (string)dr["Autor"];
-                    string Tempo = (string)dr["Autor"];
+                    string Tempo = (string)dr["Tempo"];
                     string Nome = (string)dr["Nome"];
                     string CPF = (string)dr["CPF"];  
                     string Tel = (string)dr["Telefone"];
@@ -243,23 +243,9 @@ namespace Emanuela3B
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Connection connection = new Connection();
-            SqlCommand sqlCommand = new SqlCommand();
-
-            sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = @"DELETE FROM emprestimo WHERE Id = @id";
-            sqlCommand.Parameters.AddWithValue("@id", id);
-            try
-            {
-                sqlCommand.ExecuteNonQuery();
-            }
-            catch (Exception err)
-            {
-                throw new Exception("Erro: Problemas ao excluir usuário no banco.\n" + err.Message);
-            }
-            finally
-            {
-                connection.CloseConnection();
+            //chamar metodo de exclusão
+            ClienteDAO clidados = new ClienteDAO();
+            clidados.DeleteCliente(id);
 
                 txbNomeLivro.Clear();
                 txbNpessoa.Clear();
@@ -270,7 +256,12 @@ namespace Emanuela3B
 
                 UpdateListView();
 
-            }
+            MessageBox.Show("Deletado com sucesso",
+               "BIBLIOTECA",
+               MessageBoxButtons.OK,
+               MessageBoxIcon.Information);
+            
+
 
         }
     }

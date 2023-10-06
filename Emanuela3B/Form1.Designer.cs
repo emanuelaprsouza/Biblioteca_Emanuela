@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.NLivro = new System.Windows.Forms.Label();
             this.txbNomeLivro = new System.Windows.Forms.TextBox();
             this.TxbAutor = new System.Windows.Forms.TextBox();
@@ -112,11 +113,12 @@
             this.btncow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btncow.Font = new System.Drawing.Font("Dutch801 XBd BT", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncow.ForeColor = System.Drawing.Color.Black;
-            this.btncow.Image = global::Emanuela3B.Properties.Resources.livro_png;
-            this.btncow.Location = new System.Drawing.Point(32, 240);
+            this.btncow.Image = ((System.Drawing.Image)(resources.GetObject("btncow.Image")));
+            this.btncow.Location = new System.Drawing.Point(56, 216);
             this.btncow.Name = "btncow";
-            this.btncow.Size = new System.Drawing.Size(481, 343);
+            this.btncow.Size = new System.Drawing.Size(356, 232);
             this.btncow.TabIndex = 6;
+            this.btncow.Text = "\r\n\r\n\r\n\r\nCADASTRO";
             this.btncow.UseVisualStyleBackColor = false;
             this.btncow.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -186,7 +188,7 @@
             this.columnHeader7});
             this.listView2.FullRowSelect = true;
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(611, 25);
+            this.listView2.Location = new System.Drawing.Point(610, 13);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(503, 185);
             this.listView2.TabIndex = 13;
@@ -229,11 +231,12 @@
             this.bntedit.BackColor = System.Drawing.Color.Salmon;
             this.bntedit.Font = new System.Drawing.Font("Dutch801 XBd BT", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bntedit.ForeColor = System.Drawing.Color.Black;
-            this.bntedit.Image = global::Emanuela3B.Properties.Resources.livro_png;
-            this.bntedit.Location = new System.Drawing.Point(411, 621);
+            this.bntedit.Image = ((System.Drawing.Image)(resources.GetObject("bntedit.Image")));
+            this.bntedit.Location = new System.Drawing.Point(804, 216);
             this.bntedit.Name = "bntedit";
-            this.bntedit.Size = new System.Drawing.Size(296, 209);
+            this.bntedit.Size = new System.Drawing.Size(320, 270);
             this.bntedit.TabIndex = 14;
+            this.bntedit.Text = "\r\n\r\n\r\n\r\n\r\nEDITAR";
             this.bntedit.UseVisualStyleBackColor = false;
             this.bntedit.Click += new System.EventHandler(this.bntedit_Click);
             // 
@@ -242,11 +245,12 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.button1.Font = new System.Drawing.Font("Dutch801 XBd BT", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Image = global::Emanuela3B.Properties.Resources.livro_png;
-            this.button1.Location = new System.Drawing.Point(641, 246);
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(432, 216);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(473, 337);
+            this.button1.Size = new System.Drawing.Size(355, 355);
             this.button1.TabIndex = 15;
+            this.button1.Text = "\r\n\r\n\r\n\r\n\r\n\r\n\r\nDELETAR";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
@@ -255,7 +259,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1214, 866);
+            this.ClientSize = new System.Drawing.Size(1214, 605);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.bntedit);
             this.Controls.Add(this.listView2);
@@ -273,6 +277,7 @@
             this.Controls.Add(this.NLivro);
             this.Controls.Add(this.btncow);
             this.Name = "Form1";
+            this.Text = "CADASTRO";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
