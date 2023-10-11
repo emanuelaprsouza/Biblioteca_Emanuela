@@ -26,47 +26,31 @@ namespace Emanuela3B
         {
             listView2.Items.Clear();
 
-            Connection conn = new Connection();
-            SqlCommand sqlCom = new SqlCommand();
-
-            sqlCom.Connection = conn.ReturnConnection();
-            sqlCom.CommandText = "SELECT * FROM emprestimo";
+            ClienteDAO clienteDAO = new ClienteDAO();
+            List<Cliente> clientes = SelectCliente();
 
             try
             {
-                SqlDataReader dr = sqlCom.ExecuteReader();
-
-                //Enquanto for possível continuar a leitura das linhas que foram retornadas na consulta, execute.
-                while (dr.Read())
+                foreach (Cliente cliente in clientes)
                 {
-                    int id = (int)dr["Id"];
-                    string Livro = (string)dr["NomedoLivro"];
-                    string Autor = (string)dr["Autor"];
-                    string Tempo = (string)dr["Tempo"];
-                    string Nome = (string)dr["Nome"];
-                    string CPF = (string)dr["CPF"];  
-                    string Tel = (string)dr["Telefone"];
 
-                    ListViewItem lv = new ListViewItem(id.ToString());
-                    lv.SubItems.Add(Livro);
-                    lv.SubItems.Add(Autor);
-                    lv.SubItems.Add(Tempo);
-                    lv.SubItems.Add(Nome);
-                    lv.SubItems.Add(CPF); 
-                    lv.SubItems.Add(Tel);
+                    ListViewItem lv = new ListViewItem(cliente.id.ToString());
+                    lv.SubItems.Add(cliente.NomeLivro);
+                    lv.SubItems.Add(cliente.Autor);
+                    lv.SubItems.Add(cliente.Tempo);
+                    lv.SubItems.Add(cliente.Npessoa);
+                    lv.SubItems.Add(cliente.CPF);
+                    lv.SubItems.Add(cliente.telefone);
                     listView2.Items.Add(lv);
-
                 }
-                dr.Close();
+
+                
             }
             catch (Exception err)
             {
                 MessageBox.Show(err.Message);
             }
-            finally
-            {
-                conn.CloseConnection();
-            }
+           
         }
 
 
