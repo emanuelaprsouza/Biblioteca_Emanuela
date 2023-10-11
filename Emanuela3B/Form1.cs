@@ -113,26 +113,31 @@ namespace Emanuela3B
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            Connection connection = new Connection();
-            SqlCommand sqlCommand = new SqlCommand();
+            try
+            {
 
-            sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = @"INSERT INTO emprestimo VALUES (@Livro, @Autor, @Tempo, @Nome, @CPF, @telefone)";
+                //criar objeto da classe user
+                Cliente cliente = new Cliente(txbNomeLivro.Text,
+                                              TxbAutor.Text,
+                                              txbTempo.Text,
+                                              txbNpessoa.Text,
+                                              txbCPF.Text,
+                                              txbtelefone.Text
+                                              );
+                //chamar metodo de exclusão
+                ClienteDAO clidados = new ClienteDAO();
+                clidados.InsertCliente(cliente);
 
-            sqlCommand.Parameters.AddWithValue("@Livro", txbNomeLivro.Text);
-            sqlCommand.Parameters.AddWithValue("@Autor", TxbAutor.Text);
-            sqlCommand.Parameters.AddWithValue("@Tempo", txbTempo.Text);
-            sqlCommand.Parameters.AddWithValue("@Nome", txbNpessoa.Text);
-            sqlCommand.Parameters.AddWithValue("@CPF", txbCPF.Text);
-            sqlCommand.Parameters.AddWithValue("@telefone", txbtelefone.Text);
-
-            sqlCommand.ExecuteNonQuery();
-
-            MessageBox.Show("Cadastrado com sucesso",
-                "BIBLIOTECA",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-
+                MessageBox.Show("Cadastrado com sucesso",
+                    "BIBLIOTECA",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            catch(Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
+         
                  txbNomeLivro.Clear();
                  txbNpessoa.Clear();
                  txbtelefone.Clear();
@@ -190,33 +195,32 @@ namespace Emanuela3B
 
         private void bntedit_Click(object sender, EventArgs e)
         {
-            Connection connection = new Connection();
-            SqlCommand sqlCommand = new SqlCommand();
+            try
+            {
 
-            sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = @"UPDATE emprestimo SET 
-             NomedoLivro = @Livro,
-             Autor    = @Autor,
-             Tempo    = @Tempo, 
-             Nome     = @Nome,
-             CPF      = @CPF,
-             telefone = @telefone
-             WHERE id = @id";
+                //criar objeto da classe user
+                Cliente cliente = new Cliente(txbNomeLivro.Text,
+                                              TxbAutor.Text,
+                                              txbTempo.Text,
+                                              txbNpessoa.Text,
+                                              txbCPF.Text,
+                                              txbtelefone.Text
+                                              );
+                //chamar metodo de exclusão
+                ClienteDAO clidados = new ClienteDAO();
+                clidados.InsertCliente(cliente);
 
-            sqlCommand.Parameters.AddWithValue("@Livro", txbNomeLivro.Text);
-            sqlCommand.Parameters.AddWithValue("@Autor", TxbAutor.Text);
-            sqlCommand.Parameters.AddWithValue("@Tempo", txbTempo.Text);
-            sqlCommand.Parameters.AddWithValue("@Nome", txbNpessoa.Text);
-            sqlCommand.Parameters.AddWithValue("@CPF", txbCPF.Text);
-            sqlCommand.Parameters.AddWithValue("@telefone", txbtelefone.Text);
-            sqlCommand.Parameters.AddWithValue("@id", id);
+                MessageBox.Show("Editado com sucesso",
+               "BIBLIOTECA",
+               MessageBoxButtons.OK,
+               MessageBoxIcon.Information);
 
-            sqlCommand.ExecuteNonQuery();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
 
-            MessageBox.Show("Editado com sucesso",
-                "BIBLIOTECA",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
 
             txbNomeLivro.Clear();
             txbNpessoa.Clear();

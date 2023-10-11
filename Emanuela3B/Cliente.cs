@@ -32,47 +32,99 @@ namespace Emanuela3B
             _cPF = cpf;
             _telefone = Telefone;
         }
-        
-        //propriedades 
+        public Cliente(int id,
+                       string nomeLivro,
+                       string autor,
+                       string tempo,
+                       string npessoa,
+                       string cpf,
+                       string Telefone)
+        {
+            _id = id;
+            _nomeLivro = nomeLivro;
+            _autor = autor;
+            _tempo = tempo;
+            _npessoa = npessoa;
+            _cPF = cpf;
+            _telefone = Telefone;
+        }
+
+        //propriedades (não tem abre e fecha parenteses )
         public int id
         {
-            set { this._id = value; }
-            get { return this._id; }
+            set { this._id = value;} // assumir o valor dos dados , set serve para validar os dados ,exemplo cpf,faz a atribuição do valor         
+            get { return this._id; } // retornar o valor 
         }
 
         public string NomeLivro  
         {
-            set { this._nomeLivro = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    throw new ArgumentNullException("Nome de livro inválido");
+
+                this._nomeLivro = value;
+            }
             get { return this._nomeLivro; }
         }
 
         public string Autor
         {
-            set { this._autor = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    throw new ArgumentNullException("Autor inválido");
+
+                this._autor = value; 
+            }
             get { return this._autor; }
         }
 
         public string Tempo
         {
-            set { this._nomeLivro = value; }
-            get { return this._nomeLivro; }
+            set 
+            {
+                if (string.IsNullOrEmpty(value))
+                    throw new ArgumentNullException("tempo inválido");
+
+                this._tempo = value; 
+            }
+            get { return this._tempo; }    
         }
 
         public string Npessoa
         {
-            set { this._npessoa = value; }
+            set 
+            {
+                if (string.IsNullOrEmpty(value))
+                    throw new ArgumentNullException("Nome inválido ");
+
+                this._npessoa = value; 
+            }
             get { return this._npessoa; }
         }
 
         public string CPF
         {
-            set { this._cPF = value; }
+            set 
+            {
+                if (string.IsNullOrEmpty(value))
+                    throw new ArgumentNullException("CPF inválido");
+
+                this._cPF = value; 
+            }
             get { return this._cPF; }
         }
 
         public string telefone
         {
-            set { this._telefone = value; }
+            set 
+            {
+                if (string.IsNullOrEmpty(value))
+                    throw new ArgumentNullException("telefone inválido");
+
+                this._telefone = value; 
+            }
             get { return this._telefone; }
         }
     }
