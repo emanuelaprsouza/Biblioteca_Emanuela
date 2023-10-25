@@ -27,7 +27,7 @@ namespace Emanuela3B
             listView2.Items.Clear();
 
             ClienteDAO clienteDAO = new ClienteDAO();
-            List<Cliente> clientes = SelectCliente();
+            List<Cliente> clientes = clienteDAO.SelectCliente();
 
             try
             {
