@@ -114,7 +114,7 @@
             this.btncow.Font = new System.Drawing.Font("Dutch801 XBd BT", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncow.ForeColor = System.Drawing.Color.Black;
             this.btncow.Image = ((System.Drawing.Image)(resources.GetObject("btncow.Image")));
-            this.btncow.Location = new System.Drawing.Point(56, 216);
+            this.btncow.Location = new System.Drawing.Point(40, 339);
             this.btncow.Name = "btncow";
             this.btncow.Size = new System.Drawing.Size(356, 232);
             this.btncow.TabIndex = 6;
@@ -232,7 +232,7 @@
             this.bntedit.Font = new System.Drawing.Font("Dutch801 XBd BT", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bntedit.ForeColor = System.Drawing.Color.Black;
             this.bntedit.Image = ((System.Drawing.Image)(resources.GetObject("bntedit.Image")));
-            this.bntedit.Location = new System.Drawing.Point(804, 216);
+            this.bntedit.Location = new System.Drawing.Point(827, 301);
             this.bntedit.Name = "bntedit";
             this.bntedit.Size = new System.Drawing.Size(320, 270);
             this.bntedit.TabIndex = 14;

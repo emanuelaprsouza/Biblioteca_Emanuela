@@ -121,7 +121,7 @@
   <data name="btncow.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAVwAAADjCAYAAADJ/aw4AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAA/7JJREFUeF7snQV8FOf6tkOCu7u7u8bdCO5OcafQUopDcYfgEIcEgsRDgjvUoTjB
+        wAAADsABataJCQAA/7JJREFUeF7snQV8FOf6tkOCu7u7u8bdCO5OcafQUopDcYfgEIcEgsRDgjvUoTjB
         iUCwkIS43N/9zG4gQHD5t+fb0991ZnZ2dtnszlxzv++8onU6PA4nwj6fk+Hxn82JL/RZNGjQoOHfiFZW
         Gz+FrAT6sWiEq0GDhv9lNMLVoEGDhm+ERrgaNGjQ8I3QCFeDBg0avhFfTLgaNGjQoOHdaISrQYMGDd8I
         jXA1aNCg4RuhEa4GDRo0fCM0wtWgQYOGb4RGuBo0aNDwjdAIV4MGDRq+ERrhatCgQcM3QiNcDRo0aPhG
@@ -1359,7 +1359,7 @@
   <data name="bntedit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAUkAAAE+CAYAAAAAreLRAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAA/7JJREFUeF7snQV4F0m69fd+9677zo7hHnfD3W18GIFB4wR3d3eHuBEkBAghLrhD
+        wAAADsABataJCQAA/7JJREFUeF7snQV4F0m69fd+9677zo7hHnfD3W18GIFB4wR3d3eHuBEkBAghLrhD
         cIsQDxEcgg7nO291/iQwGXZsd3bv7SfPebr/7d3p+tV5q6qrfvHg+jXo0qVLl66qpUNSly5dul4jHZK6
         dOnS9RrpkNSlS5eu10iHpC5dunS9RjokdenSpes10iGpS5cuXa+RDkldunTpeo10SOrSpUvXa6RDUpcu
         XbpeIx2SunTp0vUa6ZDUpUuXrtdIh6QuXbp0vUY6JHXp0qXrNdIhqUuXLl2vkQ5JXbp06XqNdEjq0qVL
@@ -2572,7 +2572,7 @@
   <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAV8AAAFgCAYAAAAcmXr5AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAA/7JJREFUeF7s/QV0HFe69Q/f///Dtd5vveu99w4kcezQJJPMTHDCaAcczoTJSYxi
+        wAAADsABataJCQAA/7JJREFUeF7s/QV0HFe69Q/f///Dtd5vveu99w4kcezQJJPMTHDCaAcczoTJSYxi
         lmyLLGbLlmSBZWbGOLYTs2RmZksWs5pB6hbtbz+n1AJbmWRmcq9vkpazU93FXVXnd/Z5DtS/Gds64JZb
         brnl1n+v3PB1yy233LoBcsPXLbfccusGyA1ft9xyy60bIDd83XLLLbdugNzwdcstt9y6AXLD1y233HLr
         BsgNX7fccsutGyA3fN1yyy23boDc8HXLLbfcugFyw9ctt9xy6wbIDV+33HLLrRsgN3zdcsstt26A3PB1

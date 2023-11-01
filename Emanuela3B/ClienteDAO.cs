@@ -75,13 +75,13 @@ namespace Emanuela3B
             sqlCommand.Parameters.AddWithValue("@Autor", cliente.Autor);
             sqlCommand.Parameters.AddWithValue("@Tempo", cliente.Tempo);
             sqlCommand.Parameters.AddWithValue("@Nome", cliente.Npessoa);
-            sqlCommand.Parameters.AddWithValue("@CPF", cliente.CPF); ;
+            sqlCommand.Parameters.AddWithValue("@CPF", cliente.CPF); 
             sqlCommand.Parameters.AddWithValue("@telefone", cliente.telefone);
             sqlCommand.Parameters.AddWithValue("@id", cliente.id);
 
             sqlCommand.ExecuteNonQuery();
         }
-
+         
         public void InsertCliente(Cliente cliente)
         {
             Connection connection = new Connection();
