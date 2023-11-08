@@ -27,5 +27,24 @@ namespace Emanuela3B
                            
             
         }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbcadastro_Click(object sender, EventArgs e)
+        {
+            //se passar 1 gestão total , 2 apenas cadastro 
+            Form1 form1 = new Form1(2);
+            form1.ShowDialog();
+
+        }
+
+        private void entrar_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3();
+            form3.ShowDialog();
+        }
     }
 }

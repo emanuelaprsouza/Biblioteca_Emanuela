@@ -114,7 +114,7 @@
             this.btncow.Font = new System.Drawing.Font("Dutch801 XBd BT", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncow.ForeColor = System.Drawing.Color.Black;
             this.btncow.Image = ((System.Drawing.Image)(resources.GetObject("btncow.Image")));
-            this.btncow.Location = new System.Drawing.Point(40, 339);
+            this.btncow.Location = new System.Drawing.Point(55, 339);
             this.btncow.Name = "btncow";
             this.btncow.Size = new System.Drawing.Size(356, 232);
             this.btncow.TabIndex = 6;
@@ -138,6 +138,7 @@
             this.txbNpessoa.Name = "txbNpessoa";
             this.txbNpessoa.Size = new System.Drawing.Size(163, 29);
             this.txbNpessoa.TabIndex = 3;
+            this.txbNpessoa.TextChanged += new System.EventHandler(this.txbNpessoa_TextChanged);
             // 
             // cpfpessoa
             // 
@@ -175,6 +176,7 @@
             this.txbtelefone.Name = "txbtelefone";
             this.txbtelefone.Size = new System.Drawing.Size(163, 26);
             this.txbtelefone.TabIndex = 5;
+            this.txbtelefone.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txbtelefone_MaskInputRejected);
             // 
             // listView2
             // 

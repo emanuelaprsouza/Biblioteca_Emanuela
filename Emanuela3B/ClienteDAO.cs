@@ -10,6 +10,41 @@ namespace Emanuela3B
 {
     internal class ClienteDAO
     {
+        public bool LoginCliente(string Cliente, string senha )
+        {
+            Connection conn = new Connection();
+            SqlCommand sqlCom = new SqlCommand();
+
+            sqlCom.Connection = conn.ReturnConnection();
+            sqlCom.CommandText = "SELECT * FROM emprestimo WHERE" + "CLIENTE = @Cliente AND SENHA = @senha ";
+
+            sqlCom.Parameters.AddWithValue("@Cliente",Cliente);
+            sqlCom.Parameters.AddWithValue("@senha", senha);
+
+            try
+            {
+                SqlDataReader dr = sqlCom.ExecuteReader();
+                if (dr.HasRows) 
+                {
+                    dr.Close();
+                    return true;
+                }
+
+                dr.Close();
+                return false;
+
+            }
+            catch (Exception err)
+            {
+               throw new Exception(err.Message);
+            }
+            finally
+            {
+                conn.CloseConnection();
+            }
+           
+        }
+
         public List<Cliente> SelectCliente()
         {
             Connection conn = new Connection();

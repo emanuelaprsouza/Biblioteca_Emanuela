@@ -17,9 +17,17 @@ namespace Emanuela3B
     {
 
         private int id;
-        public Form1()
+        public Form1(int controle)
         {
             InitializeComponent();
+           
+            if (controle == 2)
+            {
+                listView2.Visible = false;
+                button1.Visible = false;
+                bntedit.Visible = false;
+            }
+
         }
 
         private void UpdateListView()  
@@ -130,6 +138,29 @@ namespace Emanuela3B
                  txbCPF.Clear();
 
             UpdateListView();
+        }
+
+        public static bool IsValidBrazilianPhoneNumber(string phoneNumber)
+        {
+            // Formato do telefone brasileiro: (99) 9999-9999
+            string pattern = @"^\(\d{2}\)\s?\d{4}-\d{4}$";
+
+            // Remove os caracteres especiais do telefone antes de verificar
+            phoneNumber = Regex.Replace(phoneNumber, @"[^\d]", "");
+
+            // Verifica se o telefone possui 10 dígitos
+            if (phoneNumber.Length != 10)
+            {
+                return false;
+            }
+
+            // Verifica se o telefone segue o padrão (99) 9999-9999
+            if (Regex.IsMatch(phoneNumber, pattern))
+            {
+                return true;
+            }
+
+            return false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -251,6 +282,15 @@ namespace Emanuela3B
             
 
 
+        }
+
+        private void txbtelefone_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            if (!IsValidBrazilianPhoneNumber(txbtelefone.Text))
+            {
+                MessageBox.Show("Telefone Inválido");
+                txbtelefone.Focus();
+            }
         }
     }
 }
