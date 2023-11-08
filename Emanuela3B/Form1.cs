@@ -20,7 +20,7 @@ namespace Emanuela3B
         public Form1(int controle)
         {
             InitializeComponent();
-           
+
             if (controle == 2)
             {
                 listView2.Visible = false;
@@ -30,7 +30,8 @@ namespace Emanuela3B
 
         }
 
-        private void UpdateListView()  
+
+        private void UpdateListView()
         {
             listView2.Items.Clear();
 
@@ -52,13 +53,13 @@ namespace Emanuela3B
                     listView2.Items.Add(lv);
                 }
 
-                
+
             }
             catch (Exception err)
             {
                 MessageBox.Show(err.Message);
             }
-           
+
         }
 
 
@@ -125,17 +126,17 @@ namespace Emanuela3B
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
             }
-            catch(Exception error)
+            catch (Exception error)
             {
                 MessageBox.Show(error.Message);
             }
-         
-                 txbNomeLivro.Clear();
-                 txbNpessoa.Clear();
-                 txbtelefone.Clear();
-                 txbTempo.Clear();
-                 TxbAutor.Clear();
-                 txbCPF.Clear();
+
+            txbNomeLivro.Clear();
+            txbNpessoa.Clear();
+            txbtelefone.Clear();
+            txbTempo.Clear();
+            TxbAutor.Clear();
+            txbCPF.Clear();
 
             UpdateListView();
         }
@@ -174,7 +175,7 @@ namespace Emanuela3B
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)   
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -266,20 +267,20 @@ namespace Emanuela3B
             ClienteDAO clidados = new ClienteDAO();
             clidados.DeleteCliente(id);
 
-                txbNomeLivro.Clear();
-                txbNpessoa.Clear();
-                txbtelefone.Clear();
-                txbTempo.Clear();
-                TxbAutor.Clear();
-                txbCPF.Clear();
+            txbNomeLivro.Clear();
+            txbNpessoa.Clear();
+            txbtelefone.Clear();
+            txbTempo.Clear();
+            TxbAutor.Clear();
+            txbCPF.Clear();
 
-                UpdateListView();
+            UpdateListView();
 
             MessageBox.Show("Deletado com sucesso",
                "BIBLIOTECA",
                MessageBoxButtons.OK,
                MessageBoxIcon.Information);
-            
+
 
 
         }
@@ -292,5 +293,7 @@ namespace Emanuela3B
                 txbtelefone.Focus();
             }
         }
+
+
     }
 }

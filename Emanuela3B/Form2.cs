@@ -43,8 +43,23 @@ namespace Emanuela3B
 
         private void entrar_Click(object sender, EventArgs e)
         {
-            Form3 form3 = new Form3();
-            form3.ShowDialog();
+            string Cliente = txbcliente.Text;
+            string senha = txbsenha.Text;
+
+            ClienteDAO clienteDAO = new ClienteDAO();
+
+            if (clienteDAO.LoginCliente(Cliente, senha))
+            {
+                Form3 form3 = new Form3();
+                form3.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Verifique os dados inseridos!",
+                                "ERROU",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
         }
     }
 }
