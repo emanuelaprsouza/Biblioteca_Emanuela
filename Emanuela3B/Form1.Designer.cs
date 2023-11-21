@@ -50,8 +50,11 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bntedit = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.Senha = new System.Windows.Forms.Label();
+            this.txbsenha = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // NLivro
@@ -138,7 +141,6 @@
             this.txbNpessoa.Name = "txbNpessoa";
             this.txbNpessoa.Size = new System.Drawing.Size(163, 29);
             this.txbNpessoa.TabIndex = 3;
-            this.txbNpessoa.TextChanged += new System.EventHandler(this.txbNpessoa_TextChanged);
             // 
             // cpfpessoa
             // 
@@ -172,7 +174,7 @@
             // 
             this.txbtelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbtelefone.Location = new System.Drawing.Point(364, 165);
-            this.txbtelefone.Mask = "(+55) 00000-0000";
+            this.txbtelefone.Mask = "(+55)(00) 00000-0000";
             this.txbtelefone.Name = "txbtelefone";
             this.txbtelefone.Size = new System.Drawing.Size(163, 26);
             this.txbtelefone.TabIndex = 5;
@@ -187,12 +189,13 @@
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6,
-            this.columnHeader7});
+            this.columnHeader7,
+            this.columnHeader8});
             this.listView2.FullRowSelect = true;
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(610, 13);
+            this.listView2.Location = new System.Drawing.Point(622, 13);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(503, 185);
+            this.listView2.Size = new System.Drawing.Size(533, 185);
             this.listView2.TabIndex = 13;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
@@ -228,6 +231,11 @@
             // 
             this.columnHeader7.Text = "Telefone";
             // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Senha";
+            this.columnHeader8.Width = 72;
+            // 
             // bntedit
             // 
             this.bntedit.BackColor = System.Drawing.Color.Salmon;
@@ -256,12 +264,32 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // Senha
+            // 
+            this.Senha.AutoSize = true;
+            this.Senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Senha.Location = new System.Drawing.Point(66, 216);
+            this.Senha.Name = "Senha";
+            this.Senha.Size = new System.Drawing.Size(48, 15);
+            this.Senha.TabIndex = 16;
+            this.Senha.Text = "SENHA";
+            // 
+            // txbsenha
+            // 
+            this.txbsenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbsenha.Location = new System.Drawing.Point(69, 245);
+            this.txbsenha.Name = "txbsenha";
+            this.txbsenha.Size = new System.Drawing.Size(163, 29);
+            this.txbsenha.TabIndex = 17;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1214, 605);
+            this.Controls.Add(this.txbsenha);
+            this.Controls.Add(this.Senha);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.bntedit);
             this.Controls.Add(this.listView2);
@@ -311,6 +339,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.Button bntedit;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.Label Senha;
+        private System.Windows.Forms.TextBox txbsenha;
     }
 }
 

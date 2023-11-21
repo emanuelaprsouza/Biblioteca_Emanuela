@@ -16,5 +16,10 @@ namespace Emanuela3B
         {
             InitializeComponent();
         }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

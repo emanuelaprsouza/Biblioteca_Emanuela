@@ -5,7 +5,9 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -50,6 +52,7 @@ namespace Emanuela3B
                     lv.SubItems.Add(cliente.Npessoa);
                     lv.SubItems.Add(cliente.CPF);
                     lv.SubItems.Add(cliente.telefone);
+                    lv.SubItems.Add(cliente.senha);
                     listView2.Items.Add(lv);
                 }
 
@@ -61,6 +64,8 @@ namespace Emanuela3B
             }
 
         }
+
+
 
 
         private bool IsCpf(string cpf)
@@ -104,6 +109,19 @@ namespace Emanuela3B
 
             return cpf.EndsWith(digito);
         }
+
+        
+
+        // Display the byte array in a readable format.
+        public static void PrintByteArray(byte[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write($"{array[i]:X2}");
+                if ((i % 4) == 3) Console.Write(" ");
+            }
+            Console.WriteLine();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -115,7 +133,8 @@ namespace Emanuela3B
                                               txbTempo.Text,
                                               txbNpessoa.Text,
                                               txbCPF.Text,
-                                              txbtelefone.Text
+                                              txbtelefone.Text,
+                                              txbsenha.Text
                                               );
                 //chamar metodo de exclusão
                 ClienteDAO clidados = new ClienteDAO();
@@ -137,6 +156,7 @@ namespace Emanuela3B
             txbTempo.Clear();
             TxbAutor.Clear();
             txbCPF.Clear();
+            txbsenha.Clear();
 
             UpdateListView();
         }
@@ -220,7 +240,8 @@ namespace Emanuela3B
                                               txbTempo.Text,
                                               txbNpessoa.Text,
                                               txbCPF.Text,
-                                              txbtelefone.Text
+                                              txbtelefone.Text,
+                                              txbsenha.Text
                                               );
                 //chamar metodo de exclusão
                 ClienteDAO clidados = new ClienteDAO();
@@ -244,6 +265,7 @@ namespace Emanuela3B
             txbTempo.Clear();
             TxbAutor.Clear();
             txbCPF.Clear();
+            txbsenha.Clear();
 
             UpdateListView();
         }
@@ -259,6 +281,7 @@ namespace Emanuela3B
             txbNpessoa.Text = listView2.Items[index].SubItems[4].Text;
             txbCPF.Text = listView2.Items[index].SubItems[5].Text;
             txbtelefone.Text = listView2.Items[index].SubItems[6].Text;
+            txbsenha.Text = listView2.Items[index].SubItems[7].Text;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -273,6 +296,7 @@ namespace Emanuela3B
             txbTempo.Clear();
             TxbAutor.Clear();
             txbCPF.Clear();
+            txbsenha.Clear();
 
             UpdateListView();
 

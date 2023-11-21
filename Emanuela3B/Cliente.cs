@@ -16,6 +16,7 @@ namespace Emanuela3B
         private string _npessoa;
         private string _cPF;
         private string _telefone;
+        private string _senha;
 
 
         public Cliente(string nomeLivro, 
@@ -23,7 +24,8 @@ namespace Emanuela3B
                        string tempo,
                        string npessoa,
                        string cpf,
-                       string Telefone)
+                       string Telefone,
+                       string senha)
         {
             _nomeLivro = nomeLivro;
             _autor = autor;
@@ -31,6 +33,7 @@ namespace Emanuela3B
             _npessoa = npessoa;
             _cPF = cpf;
             _telefone = Telefone;
+            _senha = senha;
         }
         public Cliente(int id,
                        string nomeLivro,
@@ -38,7 +41,8 @@ namespace Emanuela3B
                        string tempo,
                        string npessoa,
                        string cpf,
-                       string Telefone)
+                       string Telefone,
+                       string senha)
         {
             _id = id;
             _nomeLivro = nomeLivro;
@@ -47,6 +51,7 @@ namespace Emanuela3B
             _npessoa = npessoa;
             _cPF = cpf;
             _telefone = Telefone;
+            _senha= senha;  
         }
 
         //propriedades (não tem abre e fecha parenteses )
@@ -126,6 +131,18 @@ namespace Emanuela3B
                 this._telefone = value; 
             }
             get { return this._telefone; }
+        }
+
+        public string senha
+        {
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    throw new ArgumentNullException("Senha inválida");
+
+                this._senha = value;
+            }
+            get { return this._senha; }
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Emanuela3B
             SqlCommand sqlCom = new SqlCommand();
 
             sqlCom.Connection = conn.ReturnConnection();
-            sqlCom.CommandText = "SELECT * FROM emprestimo WHERE" + "CLIENTE = @Cliente AND SENHA = @senha ";
+            sqlCom.CommandText = "SELECT * FROM emprestimo WHERE " + " Nome = @Cliente AND senha = @senha ";
 
             sqlCom.Parameters.AddWithValue("@Cliente",Cliente);
             sqlCom.Parameters.AddWithValue("@senha", senha);
@@ -70,7 +70,8 @@ namespace Emanuela3B
                    (string)dr["Tempo"],
                    (string)dr["Nome"],
                    (string)dr["CPF"],
-                   (string)dr["Telefone"]
+                   (string)dr["Telefone"],
+                   (string)dr["Senha"]
                    );
 
                     clientes.Add(objeto);
@@ -103,7 +104,8 @@ namespace Emanuela3B
              Tempo    = @Tempo, 
              Nome     = @Nome,
              CPF      = @CPF,
-             telefone = @telefone
+             telefone = @telefone,
+             senha    = @senha
              WHERE id = @id";
 
             sqlCommand.Parameters.AddWithValue("@Livro", cliente.NomeLivro);
@@ -112,6 +114,7 @@ namespace Emanuela3B
             sqlCommand.Parameters.AddWithValue("@Nome", cliente.Npessoa);
             sqlCommand.Parameters.AddWithValue("@CPF", cliente.CPF); 
             sqlCommand.Parameters.AddWithValue("@telefone", cliente.telefone);
+            sqlCommand.Parameters.AddWithValue("@senha", cliente.senha);
             sqlCommand.Parameters.AddWithValue("@id", cliente.id);
 
             sqlCommand.ExecuteNonQuery();
@@ -123,7 +126,7 @@ namespace Emanuela3B
             SqlCommand sqlCommand = new SqlCommand();
 
             sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = @"INSERT INTO emprestimo VALUES (@Livro, @Autor, @Tempo, @Nome, @CPF, @telefone)";
+            sqlCommand.CommandText = @"INSERT INTO emprestimo VALUES (@Livro, @Autor, @Tempo, @Nome, @CPF, @telefone, @senha)";
 
             sqlCommand.Parameters.AddWithValue("@Livro", cliente.NomeLivro);
             sqlCommand.Parameters.AddWithValue("@Autor", cliente.Autor);
@@ -131,6 +134,7 @@ namespace Emanuela3B
             sqlCommand.Parameters.AddWithValue("@Nome", cliente.Npessoa); 
             sqlCommand.Parameters.AddWithValue("@CPF", cliente.CPF);
             sqlCommand.Parameters.AddWithValue("@telefone", cliente.telefone);
+            sqlCommand.Parameters.AddWithValue("@senha", cliente.senha);
 
             sqlCommand.ExecuteNonQuery();
 
