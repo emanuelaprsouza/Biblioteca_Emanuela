@@ -83,6 +83,7 @@
             this.TxbAutor.Name = "TxbAutor";
             this.TxbAutor.Size = new System.Drawing.Size(163, 33);
             this.TxbAutor.TabIndex = 1;
+            this.TxbAutor.TextChanged += new System.EventHandler(this.TxbAutor_TextChanged);
             // 
             // label2
             // 
@@ -193,7 +194,7 @@
             this.columnHeader8});
             this.listView2.FullRowSelect = true;
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(622, 13);
+            this.listView2.Location = new System.Drawing.Point(614, 13);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(533, 185);
             this.listView2.TabIndex = 13;
@@ -281,6 +282,7 @@
             this.txbsenha.Name = "txbsenha";
             this.txbsenha.Size = new System.Drawing.Size(163, 29);
             this.txbsenha.TabIndex = 17;
+            this.txbsenha.TextChanged += new System.EventHandler(this.txbsenha_TextChanged);
             // 
             // Form1
             // 

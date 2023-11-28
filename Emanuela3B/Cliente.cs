@@ -137,6 +137,7 @@ namespace Emanuela3B
         {
             set
             {
+                
                 if (string.IsNullOrEmpty(value))
                     throw new ArgumentNullException("Senha inválida");
 

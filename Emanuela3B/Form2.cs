@@ -44,7 +44,7 @@ namespace Emanuela3B
         private void entrar_Click(object sender, EventArgs e)
         {
             string Cliente = txbcliente.Text;
-            string senha = txbsenha.Text;
+            string senha = Class1.CalculateMD5Hash(txbsenha.Text);
 
             ClienteDAO clienteDAO = new ClienteDAO();
 

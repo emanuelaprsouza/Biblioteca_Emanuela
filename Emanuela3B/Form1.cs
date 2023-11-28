@@ -8,6 +8,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
+using System.Security.Policy;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -111,17 +112,6 @@ namespace Emanuela3B
         }
 
         
-
-        // Display the byte array in a readable format.
-        public static void PrintByteArray(byte[] array)
-        {
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.Write($"{array[i]:X2}");
-                if ((i % 4) == 3) Console.Write(" ");
-            }
-            Console.WriteLine();
-        }
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -134,7 +124,7 @@ namespace Emanuela3B
                                               txbNpessoa.Text,
                                               txbCPF.Text,
                                               txbtelefone.Text,
-                                              txbsenha.Text
+                                              Class1.CalculateMD5Hash(txbsenha.Text)
                                               );
                 //chamar metodo de exclusão
                 ClienteDAO clidados = new ClienteDAO();
@@ -241,7 +231,7 @@ namespace Emanuela3B
                                               txbNpessoa.Text,
                                               txbCPF.Text,
                                               txbtelefone.Text,
-                                              txbsenha.Text
+                                               Class1.CalculateMD5Hash(txbsenha.Text)
                                               );
                 //chamar metodo de exclusão
                 ClienteDAO clidados = new ClienteDAO();
@@ -318,6 +308,14 @@ namespace Emanuela3B
             }
         }
 
+        private void txbsenha_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
 
+        private void TxbAutor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
