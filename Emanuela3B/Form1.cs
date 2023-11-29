@@ -47,9 +47,7 @@ namespace Emanuela3B
                 {
 
                     ListViewItem lv = new ListViewItem(cliente.id.ToString());
-                    lv.SubItems.Add(cliente.NomeLivro);
-                    lv.SubItems.Add(cliente.Autor);
-                    lv.SubItems.Add(cliente.Tempo);
+        
                     lv.SubItems.Add(cliente.Npessoa);
                     lv.SubItems.Add(cliente.CPF);
                     lv.SubItems.Add(cliente.telefone);
@@ -118,10 +116,7 @@ namespace Emanuela3B
             {
 
                 //criar objeto da classe user
-                Cliente cliente = new Cliente(txbNomeLivro.Text,
-                                              TxbAutor.Text,
-                                              txbTempo.Text,
-                                              txbNpessoa.Text,
+                Cliente cliente = new Cliente(txbNpessoa.Text,
                                               txbCPF.Text,
                                               txbtelefone.Text,
                                               Class1.CalculateMD5Hash(txbsenha.Text)
@@ -140,11 +135,9 @@ namespace Emanuela3B
                 MessageBox.Show(error.Message);
             }
 
-            txbNomeLivro.Clear();
+           
             txbNpessoa.Clear();
-            txbtelefone.Clear();
-            txbTempo.Clear();
-            TxbAutor.Clear();
+            txbtelefone.Clear();         
             txbCPF.Clear();
             txbsenha.Clear();
 
@@ -225,10 +218,7 @@ namespace Emanuela3B
             {
 
                 //criar objeto da classe user
-                Cliente cliente = new Cliente(txbNomeLivro.Text,
-                                              TxbAutor.Text,
-                                              txbTempo.Text,
-                                              txbNpessoa.Text,
+                Cliente cliente = new Cliente(txbNpessoa.Text,
                                               txbCPF.Text,
                                               txbtelefone.Text,
                                                Class1.CalculateMD5Hash(txbsenha.Text)
@@ -249,11 +239,9 @@ namespace Emanuela3B
             }
 
 
-            txbNomeLivro.Clear();
+           
             txbNpessoa.Clear();
-            txbtelefone.Clear();
-            txbTempo.Clear();
-            TxbAutor.Clear();
+            txbtelefone.Clear();           
             txbCPF.Clear();
             txbsenha.Clear();
 
@@ -264,14 +252,11 @@ namespace Emanuela3B
         {
             int index; //guardar variavel do indice que foi clicado 
             index = listView2.FocusedItem.Index;
-            id = int.Parse(listView2.Items[index].SubItems[0].Text);
-            txbNomeLivro.Text = listView2.Items[index].SubItems[1].Text;
-            TxbAutor.Text = listView2.Items[index].SubItems[2].Text;
-            txbTempo.Text = listView2.Items[index].SubItems[3].Text;
-            txbNpessoa.Text = listView2.Items[index].SubItems[4].Text;
-            txbCPF.Text = listView2.Items[index].SubItems[5].Text;
-            txbtelefone.Text = listView2.Items[index].SubItems[6].Text;
-            txbsenha.Text = listView2.Items[index].SubItems[7].Text;
+            id = int.Parse(listView2.Items[index].SubItems[0].Text);           
+            txbNpessoa.Text = listView2.Items[index].SubItems[1].Text;
+            txbCPF.Text = listView2.Items[index].SubItems[2].Text;
+            txbtelefone.Text = listView2.Items[index].SubItems[3].Text;
+            txbsenha.Text = listView2.Items[index].SubItems[4].Text;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -280,11 +265,9 @@ namespace Emanuela3B
             ClienteDAO clidados = new ClienteDAO();
             clidados.DeleteCliente(id);
 
-            txbNomeLivro.Clear();
+          
             txbNpessoa.Clear();
-            txbtelefone.Clear();
-            txbTempo.Clear();
-            TxbAutor.Clear();
+            txbtelefone.Clear();           
             txbCPF.Clear();
             txbsenha.Clear();
 
@@ -314,6 +297,16 @@ namespace Emanuela3B
         }
 
         private void TxbAutor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Npessoa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbNpessoa_TextChanged(object sender, EventArgs e)
         {
 
         }

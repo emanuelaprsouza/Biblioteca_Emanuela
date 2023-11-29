@@ -64,10 +64,7 @@ namespace Emanuela3B
                 {
                     Cliente objeto = new Cliente(
 
-                   (int)dr["Id"],
-                   (string)dr["NomedoLivro"],
-                   (string)dr["Autor"],
-                   (string)dr["Tempo"],
+                   (int)dr["Id"],                  
                    (string)dr["Nome"],
                    (string)dr["CPF"],
                    (string)dr["Telefone"],
@@ -98,19 +95,14 @@ namespace Emanuela3B
             SqlCommand sqlCommand = new SqlCommand();
 
             sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = @"UPDATE emprestimo SET 
-             NomedoLivro = @Livro,
-             Autor    = @Autor,
-             Tempo    = @Tempo, 
+            sqlCommand.CommandText = @"UPDATE emprestimo SET            
              Nome     = @Nome,
              CPF      = @CPF,
              telefone = @telefone,
              senha    = @senha
              WHERE id = @id";
 
-            sqlCommand.Parameters.AddWithValue("@Livro", cliente.NomeLivro);
-            sqlCommand.Parameters.AddWithValue("@Autor", cliente.Autor);
-            sqlCommand.Parameters.AddWithValue("@Tempo", cliente.Tempo);
+           
             sqlCommand.Parameters.AddWithValue("@Nome", cliente.Npessoa);
             sqlCommand.Parameters.AddWithValue("@CPF", cliente.CPF); 
             sqlCommand.Parameters.AddWithValue("@telefone", cliente.telefone);
@@ -126,11 +118,9 @@ namespace Emanuela3B
             SqlCommand sqlCommand = new SqlCommand();
 
             sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = @"INSERT INTO emprestimo VALUES (@Livro, @Autor, @Tempo, @Nome, @CPF, @telefone, @senha)";
+            sqlCommand.CommandText = @"INSERT INTO emprestimo VALUES ( @Nome, @CPF, @telefone, @senha)";
 
-            sqlCommand.Parameters.AddWithValue("@Livro", cliente.NomeLivro);
-            sqlCommand.Parameters.AddWithValue("@Autor", cliente.Autor);
-            sqlCommand.Parameters.AddWithValue("@Tempo", cliente.Tempo);
+          
             sqlCommand.Parameters.AddWithValue("@Nome", cliente.Npessoa); 
             sqlCommand.Parameters.AddWithValue("@CPF", cliente.CPF);
             sqlCommand.Parameters.AddWithValue("@telefone", cliente.telefone);
