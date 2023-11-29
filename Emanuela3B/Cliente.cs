@@ -9,45 +9,31 @@ namespace Emanuela3B
     public class Cliente
     {
         //atributo
-        private int    _id;
-        private string _nomeLivro;
-        private string _autor;
-        private string _tempo;
+        private int    _id;        
         private string _npessoa;
         private string _cPF;
         private string _telefone;
         private string _senha;
 
 
-        public Cliente(string nomeLivro, 
-                       string autor,
-                       string tempo,
-                       string npessoa,
+        public Cliente(string npessoa,
                        string cpf,
                        string Telefone,
                        string senha)
         {
-            _nomeLivro = nomeLivro;
-            _autor = autor;
-            _tempo = tempo;
+           
             _npessoa = npessoa;
             _cPF = cpf;
             _telefone = Telefone;
             _senha = senha;
         }
-        public Cliente(int id,
-                       string nomeLivro,
-                       string autor,
-                       string tempo,
+        public Cliente(int id,                     
                        string npessoa,
                        string cpf,
                        string Telefone,
                        string senha)
         {
-            _id = id;
-            _nomeLivro = nomeLivro;
-            _autor = autor;
-            _tempo = tempo;
+            _id = id;           
             _npessoa = npessoa;
             _cPF = cpf;
             _telefone = Telefone;
@@ -61,41 +47,6 @@ namespace Emanuela3B
             get { return this._id; } // retornar o valor 
         }
 
-        public string NomeLivro  
-        {
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    throw new ArgumentNullException("Nome de livro inválido");
-
-                this._nomeLivro = value;
-            }
-            get { return this._nomeLivro; }
-        }
-
-        public string Autor
-        {
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    throw new ArgumentNullException("Autor inválido");
-
-                this._autor = value; 
-            }
-            get { return this._autor; }
-        }
-
-        public string Tempo
-        {
-            set 
-            {
-                if (string.IsNullOrEmpty(value))
-                    throw new ArgumentNullException("tempo inválido");
-
-                this._tempo = value; 
-            }
-            get { return this._tempo; }    
-        }
 
         public string Npessoa
         {

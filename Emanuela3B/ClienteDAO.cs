@@ -64,11 +64,11 @@ namespace Emanuela3B
                 {
                     Cliente objeto = new Cliente(
 
-                   (int)dr["Id"],                  
+                   (int)dr["id"],                  
                    (string)dr["Nome"],
                    (string)dr["CPF"],
-                   (string)dr["Telefone"],
-                   (string)dr["Senha"]
+                   (string)dr["telefone"],
+                   (string)dr["senha"]
                    );
 
                     clientes.Add(objeto);

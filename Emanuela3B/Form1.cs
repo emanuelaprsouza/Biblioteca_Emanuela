@@ -190,7 +190,7 @@ namespace Emanuela3B
 
         private void listView2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+           
         }
 
         private void txbCPF_Leave(object sender, EventArgs e)
@@ -238,8 +238,6 @@ namespace Emanuela3B
                 MessageBox.Show(error.Message);
             }
 
-
-           
             txbNpessoa.Clear();
             txbtelefone.Clear();           
             txbCPF.Clear();
@@ -309,6 +307,14 @@ namespace Emanuela3B
         private void txbNpessoa_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+       
+
+        private void txbVL_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
         }
     }
 }

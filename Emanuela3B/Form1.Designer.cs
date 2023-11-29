@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.btncow = new System.Windows.Forms.Button();
             this.Npessoa = new System.Windows.Forms.Label();
             this.txbNpessoa = new System.Windows.Forms.TextBox();
             this.cpfpessoa = new System.Windows.Forms.Label();
@@ -38,41 +37,26 @@
             this.txbtelefone = new System.Windows.Forms.MaskedTextBox();
             this.listView2 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.bntedit = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.Senha = new System.Windows.Forms.Label();
-            this.txbsenha = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.bntedit = new System.Windows.Forms.Button();
+            this.btncow = new System.Windows.Forms.Button();
+            this.txbsenha = new System.Windows.Forms.MaskedTextBox();
+            this.txbVL = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btncow
-            // 
-            this.btncow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btncow.Font = new System.Drawing.Font("Dutch801 XBd BT", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncow.ForeColor = System.Drawing.Color.Black;
-            this.btncow.Image = ((System.Drawing.Image)(resources.GetObject("btncow.Image")));
-            this.btncow.Location = new System.Drawing.Point(31, 335);
-            this.btncow.Name = "btncow";
-            this.btncow.Size = new System.Drawing.Size(356, 232);
-            this.btncow.TabIndex = 6;
-            this.btncow.Text = "\r\n\r\n\r\n\r\nCADASTRO";
-            this.btncow.UseVisualStyleBackColor = false;
-            this.btncow.Click += new System.EventHandler(this.button1_Click);
             // 
             // Npessoa
             // 
             this.Npessoa.AutoSize = true;
             this.Npessoa.Location = new System.Drawing.Point(66, 13);
             this.Npessoa.Name = "Npessoa";
-            this.Npessoa.Size = new System.Drawing.Size(35, 13);
+            this.Npessoa.Size = new System.Drawing.Size(39, 13);
             this.Npessoa.TabIndex = 7;
-            this.Npessoa.Text = "Nome";
+            this.Npessoa.Text = "NOME";
             this.Npessoa.Click += new System.EventHandler(this.Npessoa_Click);
             // 
             // txbNpessoa
@@ -126,18 +110,15 @@
             // 
             this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6,
             this.columnHeader7,
             this.columnHeader8});
             this.listView2.FullRowSelect = true;
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(431, 12);
+            this.listView2.Location = new System.Drawing.Point(716, 13);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(533, 185);
+            this.listView2.Size = new System.Drawing.Size(431, 185);
             this.listView2.TabIndex = 13;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
@@ -148,49 +129,35 @@
             // 
             this.columnHeader1.Text = "ID";
             // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "NomedoLivro";
-            this.columnHeader2.Width = 92;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Autor";
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Tempo";
-            // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Cliente";
+            this.columnHeader5.Width = 73;
             // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "CPF";
+            this.columnHeader6.Width = 95;
             // 
             // columnHeader7
             // 
             this.columnHeader7.Text = "Telefone";
+            this.columnHeader7.Width = 90;
             // 
             // columnHeader8
             // 
             this.columnHeader8.Text = "Senha";
-            this.columnHeader8.Width = 72;
+            this.columnHeader8.Width = 98;
             // 
-            // bntedit
+            // Senha
             // 
-            this.bntedit.BackColor = System.Drawing.Color.Salmon;
-            this.bntedit.Font = new System.Drawing.Font("Dutch801 XBd BT", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntedit.ForeColor = System.Drawing.Color.Black;
-            this.bntedit.Image = ((System.Drawing.Image)(resources.GetObject("bntedit.Image")));
-            this.bntedit.Location = new System.Drawing.Point(827, 301);
-            this.bntedit.Name = "bntedit";
-            this.bntedit.Size = new System.Drawing.Size(320, 270);
-            this.bntedit.TabIndex = 14;
-            this.bntedit.Text = "\r\n\r\n\r\n\r\n\r\nEDITAR";
-            this.bntedit.UseVisualStyleBackColor = false;
-            this.bntedit.Click += new System.EventHandler(this.bntedit_Click);
+            this.Senha.AutoSize = true;
+            this.Senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Senha.Location = new System.Drawing.Point(66, 242);
+            this.Senha.Name = "Senha";
+            this.Senha.Size = new System.Drawing.Size(48, 15);
+            this.Senha.TabIndex = 16;
+            this.Senha.Text = "SENHA";
             // 
             // button1
             // 
@@ -206,31 +173,61 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // Senha
+            // bntedit
             // 
-            this.Senha.AutoSize = true;
-            this.Senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Senha.Location = new System.Drawing.Point(66, 242);
-            this.Senha.Name = "Senha";
-            this.Senha.Size = new System.Drawing.Size(48, 15);
-            this.Senha.TabIndex = 16;
-            this.Senha.Text = "SENHA";
+            this.bntedit.BackColor = System.Drawing.Color.Salmon;
+            this.bntedit.Font = new System.Drawing.Font("Dutch801 XBd BT", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntedit.ForeColor = System.Drawing.Color.Black;
+            this.bntedit.Image = ((System.Drawing.Image)(resources.GetObject("bntedit.Image")));
+            this.bntedit.Location = new System.Drawing.Point(827, 301);
+            this.bntedit.Name = "bntedit";
+            this.bntedit.Size = new System.Drawing.Size(320, 270);
+            this.bntedit.TabIndex = 14;
+            this.bntedit.Text = "\r\n\r\n\r\n\r\n\r\nEDITAR";
+            this.bntedit.UseVisualStyleBackColor = false;
+            this.bntedit.Click += new System.EventHandler(this.bntedit_Click);
+            // 
+            // btncow
+            // 
+            this.btncow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btncow.Font = new System.Drawing.Font("Dutch801 XBd BT", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncow.ForeColor = System.Drawing.Color.Black;
+            this.btncow.Image = ((System.Drawing.Image)(resources.GetObject("btncow.Image")));
+            this.btncow.Location = new System.Drawing.Point(31, 335);
+            this.btncow.Name = "btncow";
+            this.btncow.Size = new System.Drawing.Size(356, 232);
+            this.btncow.TabIndex = 6;
+            this.btncow.Text = "\r\n\r\n\r\n\r\nCADASTRO";
+            this.btncow.UseVisualStyleBackColor = false;
+            this.btncow.Click += new System.EventHandler(this.button1_Click);
             // 
             // txbsenha
             // 
-            this.txbsenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbsenha.Location = new System.Drawing.Point(69, 273);
+            this.txbsenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbsenha.Location = new System.Drawing.Point(69, 270);
             this.txbsenha.Name = "txbsenha";
-            this.txbsenha.Size = new System.Drawing.Size(163, 29);
+            this.txbsenha.PasswordChar = '*';
+            this.txbsenha.Size = new System.Drawing.Size(163, 26);
             this.txbsenha.TabIndex = 17;
-            this.txbsenha.TextChanged += new System.EventHandler(this.txbsenha_TextChanged);
+            // 
+            // txbVL
+            // 
+            this.txbVL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbVL.Location = new System.Drawing.Point(290, 299);
+            this.txbVL.Name = "txbVL";
+            this.txbVL.Size = new System.Drawing.Size(87, 30);
+            this.txbVL.TabIndex = 18;
+            this.txbVL.Text = "VOLTAR";
+            this.txbVL.UseVisualStyleBackColor = true;
+            this.txbVL.Click += new System.EventHandler(this.txbVL_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1176, 605);
+            this.ClientSize = new System.Drawing.Size(424, 605);
+            this.Controls.Add(this.txbVL);
             this.Controls.Add(this.txbsenha);
             this.Controls.Add(this.Senha);
             this.Controls.Add(this.button1);
@@ -262,9 +259,6 @@
         private System.Windows.Forms.MaskedTextBox txbtelefone;
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
@@ -272,7 +266,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.Label Senha;
-        private System.Windows.Forms.TextBox txbsenha;
+        private System.Windows.Forms.MaskedTextBox txbsenha;
+        private System.Windows.Forms.Button txbVL;
     }
 }
 
