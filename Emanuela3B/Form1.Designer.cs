@@ -209,6 +209,7 @@
             this.txbsenha.PasswordChar = '*';
             this.txbsenha.Size = new System.Drawing.Size(163, 26);
             this.txbsenha.TabIndex = 17;
+            this.txbsenha.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txbsenha_MaskInputRejected);
             // 
             // txbVL
             // 

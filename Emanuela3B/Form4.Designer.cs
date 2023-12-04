@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.email = new System.Windows.Forms.Label();
             this.txbemail = new System.Windows.Forms.TextBox();
             this.rua = new System.Windows.Forms.Label();
@@ -36,6 +37,16 @@
             this.txbbairro = new System.Windows.Forms.TextBox();
             this.num = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.livro = new System.Windows.Forms.Label();
+            this.txblivro = new System.Windows.Forms.TextBox();
+            this.autor = new System.Windows.Forms.Label();
+            this.txbautor = new System.Windows.Forms.TextBox();
+            this.aluneouprofessore = new System.Windows.Forms.Label();
+            this.txbestudante = new System.Windows.Forms.RadioButton();
+            this.txbprofessor = new System.Windows.Forms.RadioButton();
+            this.txbcalendario = new System.Windows.Forms.MonthCalendar();
+            this.aluguel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // email
@@ -110,11 +121,109 @@
             this.textBox1.Size = new System.Drawing.Size(162, 24);
             this.textBox1.TabIndex = 7;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // livro
+            // 
+            this.livro.AutoSize = true;
+            this.livro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.livro.Location = new System.Drawing.Point(29, 279);
+            this.livro.Name = "livro";
+            this.livro.Size = new System.Drawing.Size(42, 15);
+            this.livro.TabIndex = 9;
+            this.livro.Text = "LIVRO";
+            // 
+            // txblivro
+            // 
+            this.txblivro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txblivro.Location = new System.Drawing.Point(32, 298);
+            this.txblivro.Name = "txblivro";
+            this.txblivro.Size = new System.Drawing.Size(162, 24);
+            this.txblivro.TabIndex = 10;
+            // 
+            // autor
+            // 
+            this.autor.AutoSize = true;
+            this.autor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autor.Location = new System.Drawing.Point(32, 340);
+            this.autor.Name = "autor";
+            this.autor.Size = new System.Drawing.Size(48, 15);
+            this.autor.TabIndex = 11;
+            this.autor.Text = "AUTOR";
+            // 
+            // txbautor
+            // 
+            this.txbautor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbautor.Location = new System.Drawing.Point(32, 369);
+            this.txbautor.Name = "txbautor";
+            this.txbautor.Size = new System.Drawing.Size(162, 24);
+            this.txbautor.TabIndex = 12;
+            // 
+            // aluneouprofessore
+            // 
+            this.aluneouprofessore.AutoSize = true;
+            this.aluneouprofessore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aluneouprofessore.Location = new System.Drawing.Point(462, 34);
+            this.aluneouprofessore.Name = "aluneouprofessore";
+            this.aluneouprofessore.Size = new System.Drawing.Size(60, 15);
+            this.aluneouprofessore.TabIndex = 13;
+            this.aluneouprofessore.Text = "VOCÊ É ?";
+            // 
+            // txbestudante
+            // 
+            this.txbestudante.AutoSize = true;
+            this.txbestudante.Location = new System.Drawing.Point(465, 69);
+            this.txbestudante.Name = "txbestudante";
+            this.txbestudante.Size = new System.Drawing.Size(91, 17);
+            this.txbestudante.TabIndex = 14;
+            this.txbestudante.TabStop = true;
+            this.txbestudante.Text = "ESTUDANTE";
+            this.txbestudante.UseVisualStyleBackColor = true;
+            // 
+            // txbprofessor
+            // 
+            this.txbprofessor.AutoSize = true;
+            this.txbprofessor.Location = new System.Drawing.Point(465, 101);
+            this.txbprofessor.Name = "txbprofessor";
+            this.txbprofessor.Size = new System.Drawing.Size(91, 17);
+            this.txbprofessor.TabIndex = 15;
+            this.txbprofessor.TabStop = true;
+            this.txbprofessor.Text = "PROFESSOR";
+            this.txbprofessor.UseVisualStyleBackColor = true;
+            this.txbprofessor.CheckedChanged += new System.EventHandler(this.txbprofessor_CheckedChanged);
+            // 
+            // txbcalendario
+            // 
+            this.txbcalendario.Location = new System.Drawing.Point(385, 193);
+            this.txbcalendario.Name = "txbcalendario";
+            this.txbcalendario.TabIndex = 16;
+            // 
+            // aluguel
+            // 
+            this.aluguel.AutoSize = true;
+            this.aluguel.Location = new System.Drawing.Point(462, 162);
+            this.aluguel.Name = "aluguel";
+            this.aluguel.Size = new System.Drawing.Size(57, 13);
+            this.aluguel.TabIndex = 17;
+            this.aluguel.Text = "ALUGUEL";
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1224, 665);
+            this.Controls.Add(this.aluguel);
+            this.Controls.Add(this.txbcalendario);
+            this.Controls.Add(this.txbprofessor);
+            this.Controls.Add(this.txbestudante);
+            this.Controls.Add(this.aluneouprofessore);
+            this.Controls.Add(this.txbautor);
+            this.Controls.Add(this.autor);
+            this.Controls.Add(this.txblivro);
+            this.Controls.Add(this.livro);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.num);
             this.Controls.Add(this.txbbairro);
@@ -141,5 +250,15 @@
         private System.Windows.Forms.TextBox txbbairro;
         private System.Windows.Forms.Label num;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Label livro;
+        private System.Windows.Forms.TextBox txblivro;
+        private System.Windows.Forms.Label autor;
+        private System.Windows.Forms.TextBox txbautor;
+        private System.Windows.Forms.Label aluneouprofessore;
+        private System.Windows.Forms.RadioButton txbestudante;
+        private System.Windows.Forms.RadioButton txbprofessor;
+        private System.Windows.Forms.MonthCalendar txbcalendario;
+        private System.Windows.Forms.Label aluguel;
     }
 }

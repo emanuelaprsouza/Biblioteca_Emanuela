@@ -104,7 +104,7 @@
             // 
             this.txbcadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.txbcadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbcadastro.Location = new System.Drawing.Point(816, 164);
+            this.txbcadastro.Location = new System.Drawing.Point(731, 162);
             this.txbcadastro.Name = "txbcadastro";
             this.txbcadastro.Size = new System.Drawing.Size(184, 47);
             this.txbcadastro.TabIndex = 6;

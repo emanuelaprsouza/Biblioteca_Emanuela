@@ -21,5 +21,10 @@ namespace Emanuela3B
         {
 
         }
+
+        private void txbprofessor_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
