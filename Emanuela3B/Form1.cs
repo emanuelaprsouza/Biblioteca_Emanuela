@@ -1,4 +1,6 @@
-﻿using System;
+﻿using iTextSharp.text.pdf;
+using iTextSharp.text;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,12 +9,14 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Security.Cryptography;
 using System.Security.Policy;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Emanuela3B
 {
@@ -26,7 +30,7 @@ namespace Emanuela3B
 
             if (controle == 2)
             {
-                listView2.Visible = false;
+                
                 button1.Visible = false;
                 bntedit.Visible = false;
             }
@@ -107,11 +111,30 @@ namespace Emanuela3B
             digito = digito + resto.ToString();
 
             return cpf.EndsWith(digito);
+
+            
         }
 
         
         private void button1_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txbCPF.Text))
+            {
+                throw new Exception("o campo CPF não esta preenchido corretamente");
+            }
+            if (string.IsNullOrEmpty(txbsenha.Text))
+            {
+                throw new Exception("o campo senha não esta preenchido corretamente");
+            }
+            if (string.IsNullOrEmpty(txbNpessoa.Text))
+            {
+                throw new Exception("o campo nome não esta preenchido corretamente");
+            }
+            if (string.IsNullOrEmpty(txbtelefone.Text))
+            {
+                throw new Exception("o campo telefone não esta preenchido corretamente");
+            }
+
             try
             {
 
@@ -195,6 +218,7 @@ namespace Emanuela3B
 
         private void txbCPF_Leave(object sender, EventArgs e)
         {
+
             if (!IsCpf(txbCPF.Text))
             {
                 MessageBox.Show("CPF Inválido");
@@ -282,6 +306,7 @@ namespace Emanuela3B
 
         private void txbtelefone_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
+
             if (!IsValidBrazilianPhoneNumber(txbtelefone.Text))
             {
                 MessageBox.Show("Telefone Inválido");
@@ -306,7 +331,7 @@ namespace Emanuela3B
 
         private void txbNpessoa_TextChanged(object sender, EventArgs e)
         {
-
+           
         }
 
        
@@ -319,7 +344,88 @@ namespace Emanuela3B
 
         private void txbsenha_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
+            
+        }
+
+        private void txbCPF_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            
+        }
+
+        private void relatorio_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(txbNpessoa.Text))
+                {
+                    MessageBox.Show(
+                        "Insira o Nome para gerar o relatório",
+                        "ATENÇÂO",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                        txbNpessoa.Clear();
+                }
+
+                string NOME, CPF, TELEFONE,SENHA; 
+
+
+                Connection connection = new Connection();
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.Connection = connection.ReturnConnection();
+                sqlCommand.CommandText = "SELECT * FROM emprestimo WHERE Nome = @nome";
+                sqlCommand.Parameters.AddWithValue("@nome", txbNpessoa.Text);
+
+
+                using (SqlDataReader reader1 = sqlCommand.ExecuteReader())
+                {
+                    reader1.Read();
+
+                    NOME = (string)reader1["Nome"]; 
+                    CPF = (string)reader1["CPF"]; 
+                    TELEFONE = (string)reader1["Telefone"]; 
+                    SENHA = (string)reader1["Senha"];
+                   
+                }
+
+                string Caminho = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                string NomeArquivo = "relatorio_" + txbNpessoa.Text + ".pdf";
+                string CaminhoCompleto = Path.Combine(Caminho, NomeArquivo);
+                FileStream ArquivoPDF = new FileStream(CaminhoCompleto, FileMode.Create);
+                Document Documento = new Document(PageSize.A4);
+                PdfWriter pdfwriter = PdfWriter.GetInstance(Documento, ArquivoPDF);
+
+                string dados = "";
+
+
+                Paragraph Paragrafo1 = new Paragraph(dados, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 12, (int)System.Drawing.FontStyle.Bold));
+                Paragrafo1.Alignment = Element.ALIGN_LEFT;
+                Paragrafo1.Add("Biblioteca_Emanuela");
+
+
+                Paragraph Paragrafo2 = new Paragraph(dados, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 12, (int)System.Drawing.FontStyle.Regular));
+                Paragrafo2.Alignment = Element.ALIGN_LEFT;
+                Paragrafo2.Add("Dados do Usuário:\n" + "Nome: " + txbNpessoa + "\nCPF: " + txbCPF + "\nTelefone: " + txbtelefone + "\nSenha: " + txbsenha);
+
+
+                Documento.Open();
+                Documento.Add(Paragrafo1);
+                Documento.Add(Paragrafo2);
+                Documento.Close();
+
+
+                MessageBox.Show(
+                "O relatório foi criado com sucesso",
+                "ATENÇÃO",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Erro ao criar o relatório" + ex.Message);
+            }
 
         }
     }
 }
+    
+

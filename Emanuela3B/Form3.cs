@@ -26,7 +26,7 @@ namespace Emanuela3B
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            //se passar 3 gestão total , 4 apenas cadastro 
+            
             Form4 form4 = new Form4();
             form4.Show();
         }
@@ -39,65 +39,24 @@ namespace Emanuela3B
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            //se passar 3 gestão total , 4 apenas cadastro 
-            Form4 form4 = new Form4();
-            form4.Show();
+            
+            Form5 form5 = new Form5();
+            form5.Show();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            //se passar 3 gestão total , 4 apenas cadastro 
-            Form4 form4 = new Form4();
-            form4.Show();
+           
+            Form6 form6 = new Form6();
+            form6.Show();
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            //se passar 3 gestão total , 4 apenas cadastro 
-            Form4 form4 = new Form4();
-            form4.Show();
-        }
+        
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            //se passar 3 gestão total , 4 apenas cadastro 
-            Form4 form4 = new Form4();
-            form4.Show();
-        }
-
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-            //se passar 3 gestão total , 4 apenas cadastro 
-            Form4 form4 = new Form4();
-            form4.Show();
-        }
-
-        private void pictureBox7_Click(object sender, EventArgs e)
-        {
-            //se passar 3 gestão total , 4 apenas cadastro 
-            Form4 form4 = new Form4();
-            form4.Show();
-        }
-
-        private void pictureBox8_Click(object sender, EventArgs e)
-        {
-            //se passar 3 gestão total , 4 apenas cadastro 
-            Form4 form4 = new Form4();
-            form4.Show();
-        }
-
-        private void pictureBox9_Click(object sender, EventArgs e)
-        {
-            //se passar 3 gestão total , 4 apenas cadastro 
-            Form4 form4 = new Form4();
-            form4.Show();
-        }
-
-        private void pictureBox10_Click(object sender, EventArgs e)
-        {
-            //se passar 3 gestão total , 4 apenas cadastro 
-            Form4 form4 = new Form4();
-            form4.Show();
+            Form7 form7 = new Form7();
+            form7.Show();
         }
     }
 }

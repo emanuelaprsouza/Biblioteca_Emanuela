@@ -47,6 +47,8 @@
             this.btncow = new System.Windows.Forms.Button();
             this.txbsenha = new System.Windows.Forms.MaskedTextBox();
             this.txbVL = new System.Windows.Forms.Button();
+            this.relatorio = new System.Windows.Forms.Button();
+            this.termosdeuso = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // Npessoa
@@ -62,7 +64,7 @@
             // txbNpessoa
             // 
             this.txbNpessoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbNpessoa.Location = new System.Drawing.Point(69, 46);
+            this.txbNpessoa.Location = new System.Drawing.Point(69, 29);
             this.txbNpessoa.Name = "txbNpessoa";
             this.txbNpessoa.Size = new System.Drawing.Size(163, 29);
             this.txbNpessoa.TabIndex = 3;
@@ -71,7 +73,7 @@
             // cpfpessoa
             // 
             this.cpfpessoa.AutoSize = true;
-            this.cpfpessoa.Location = new System.Drawing.Point(66, 89);
+            this.cpfpessoa.Location = new System.Drawing.Point(66, 71);
             this.cpfpessoa.Name = "cpfpessoa";
             this.cpfpessoa.Size = new System.Drawing.Size(27, 13);
             this.cpfpessoa.TabIndex = 9;
@@ -80,7 +82,7 @@
             // telefonepess
             // 
             this.telefonepess.AutoSize = true;
-            this.telefonepess.Location = new System.Drawing.Point(66, 169);
+            this.telefonepess.Location = new System.Drawing.Point(66, 129);
             this.telefonepess.Name = "telefonepess";
             this.telefonepess.Size = new System.Drawing.Size(63, 13);
             this.telefonepess.TabIndex = 11;
@@ -89,17 +91,18 @@
             // txbCPF
             // 
             this.txbCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbCPF.Location = new System.Drawing.Point(69, 120);
+            this.txbCPF.Location = new System.Drawing.Point(69, 87);
             this.txbCPF.Mask = "000,000,000-00";
             this.txbCPF.Name = "txbCPF";
             this.txbCPF.Size = new System.Drawing.Size(163, 29);
             this.txbCPF.TabIndex = 4;
+            this.txbCPF.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txbCPF_MaskInputRejected);
             this.txbCPF.Leave += new System.EventHandler(this.txbCPF_Leave);
             // 
             // txbtelefone
             // 
             this.txbtelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbtelefone.Location = new System.Drawing.Point(69, 199);
+            this.txbtelefone.Location = new System.Drawing.Point(69, 145);
             this.txbtelefone.Mask = "(+55)(00) 00000-0000";
             this.txbtelefone.Name = "txbtelefone";
             this.txbtelefone.Size = new System.Drawing.Size(163, 26);
@@ -116,7 +119,7 @@
             this.columnHeader8});
             this.listView2.FullRowSelect = true;
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(716, 13);
+            this.listView2.Location = new System.Drawing.Point(422, 358);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(431, 185);
             this.listView2.TabIndex = 13;
@@ -153,7 +156,7 @@
             // 
             this.Senha.AutoSize = true;
             this.Senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Senha.Location = new System.Drawing.Point(66, 242);
+            this.Senha.Location = new System.Drawing.Point(66, 190);
             this.Senha.Name = "Senha";
             this.Senha.Size = new System.Drawing.Size(48, 15);
             this.Senha.TabIndex = 16;
@@ -165,9 +168,9 @@
             this.button1.Font = new System.Drawing.Font("Dutch801 XBd BT", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(431, 216);
+            this.button1.Location = new System.Drawing.Point(907, 242);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(355, 355);
+            this.button1.Size = new System.Drawing.Size(329, 351);
             this.button1.TabIndex = 15;
             this.button1.Text = "\r\n\r\n\r\n\r\n\r\n\r\n\r\nDELETAR";
             this.button1.UseVisualStyleBackColor = false;
@@ -179,7 +182,7 @@
             this.bntedit.Font = new System.Drawing.Font("Dutch801 XBd BT", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bntedit.ForeColor = System.Drawing.Color.Black;
             this.bntedit.Image = ((System.Drawing.Image)(resources.GetObject("bntedit.Image")));
-            this.bntedit.Location = new System.Drawing.Point(827, 301);
+            this.bntedit.Location = new System.Drawing.Point(485, 13);
             this.bntedit.Name = "bntedit";
             this.bntedit.Size = new System.Drawing.Size(320, 270);
             this.bntedit.TabIndex = 14;
@@ -204,7 +207,7 @@
             // txbsenha
             // 
             this.txbsenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbsenha.Location = new System.Drawing.Point(69, 270);
+            this.txbsenha.Location = new System.Drawing.Point(69, 208);
             this.txbsenha.Name = "txbsenha";
             this.txbsenha.PasswordChar = '*';
             this.txbsenha.Size = new System.Drawing.Size(163, 26);
@@ -222,12 +225,37 @@
             this.txbVL.UseVisualStyleBackColor = true;
             this.txbVL.Click += new System.EventHandler(this.txbVL_Click);
             // 
+            // relatorio
+            // 
+            this.relatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.relatorio.Location = new System.Drawing.Point(530, 299);
+            this.relatorio.Name = "relatorio";
+            this.relatorio.Size = new System.Drawing.Size(214, 33);
+            this.relatorio.TabIndex = 19;
+            this.relatorio.Text = "GERAR RELATÓRIO";
+            this.relatorio.UseVisualStyleBackColor = true;
+            this.relatorio.Click += new System.EventHandler(this.relatorio_Click);
+            // 
+            // termosdeuso
+            // 
+            this.termosdeuso.AutoSize = true;
+            this.termosdeuso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.termosdeuso.Location = new System.Drawing.Point(69, 263);
+            this.termosdeuso.Name = "termosdeuso";
+            this.termosdeuso.Size = new System.Drawing.Size(222, 20);
+            this.termosdeuso.TabIndex = 20;
+            this.termosdeuso.TabStop = true;
+            this.termosdeuso.Text = "Concordo com os termos de uso ";
+            this.termosdeuso.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(424, 605);
+            this.ClientSize = new System.Drawing.Size(1289, 605);
+            this.Controls.Add(this.termosdeuso);
+            this.Controls.Add(this.relatorio);
             this.Controls.Add(this.txbVL);
             this.Controls.Add(this.txbsenha);
             this.Controls.Add(this.Senha);
@@ -269,6 +297,8 @@
         private System.Windows.Forms.Label Senha;
         private System.Windows.Forms.MaskedTextBox txbsenha;
         private System.Windows.Forms.Button txbVL;
+        private System.Windows.Forms.Button relatorio;
+        private System.Windows.Forms.RadioButton termosdeuso;
     }
 }
 

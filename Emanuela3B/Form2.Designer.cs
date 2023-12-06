@@ -36,13 +36,14 @@
             this.limpar = new System.Windows.Forms.Button();
             this.entrar = new System.Windows.Forms.Button();
             this.txbcadastro = new System.Windows.Forms.Button();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.SuspendLayout();
             // 
             // cliente
             // 
             this.cliente.AutoSize = true;
             this.cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cliente.Location = new System.Drawing.Point(547, 274);
+            this.cliente.Location = new System.Drawing.Point(461, 252);
             this.cliente.Name = "cliente";
             this.cliente.Size = new System.Drawing.Size(96, 24);
             this.cliente.TabIndex = 0;
@@ -52,7 +53,7 @@
             // txbcliente
             // 
             this.txbcliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbcliente.Location = new System.Drawing.Point(519, 323);
+            this.txbcliente.Location = new System.Drawing.Point(437, 321);
             this.txbcliente.Name = "txbcliente";
             this.txbcliente.Size = new System.Drawing.Size(156, 26);
             this.txbcliente.TabIndex = 1;
@@ -60,7 +61,7 @@
             // txbsenha
             // 
             this.txbsenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbsenha.Location = new System.Drawing.Point(519, 454);
+            this.txbsenha.Location = new System.Drawing.Point(437, 453);
             this.txbsenha.Name = "txbsenha";
             this.txbsenha.Size = new System.Drawing.Size(156, 29);
             this.txbsenha.TabIndex = 2;
@@ -69,7 +70,7 @@
             // 
             this.senha.AutoSize = true;
             this.senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.senha.Location = new System.Drawing.Point(546, 392);
+            this.senha.Location = new System.Drawing.Point(460, 397);
             this.senha.Name = "senha";
             this.senha.Size = new System.Drawing.Size(89, 25);
             this.senha.TabIndex = 3;
@@ -112,6 +113,12 @@
             this.txbcadastro.UseVisualStyleBackColor = false;
             this.txbcadastro.Click += new System.EventHandler(this.txbcadastro_Click);
             // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(650, 299);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 7;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -119,6 +126,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1207, 859);
+            this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.txbcadastro);
             this.Controls.Add(this.entrar);
             this.Controls.Add(this.limpar);
@@ -143,5 +151,6 @@
         private System.Windows.Forms.Button limpar;
         private System.Windows.Forms.Button entrar;
         private System.Windows.Forms.Button txbcadastro;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
     }
 }

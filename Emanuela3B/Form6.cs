@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace Emanuela3B
 {
-    public partial class Form4 : Form
+    public partial class Form6 : Form
     {
-        public Form4()
+        public Form6()
         {
             InitializeComponent();
         }
-
-        private void Form4_Load(object sender, EventArgs e)
-        {
-
-        }
-
-       
     }
 }
